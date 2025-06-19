@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Animal Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <header>
@@ -15,28 +16,41 @@
     </header>
 
     <main>
-        <div class="filters">
-            <button class="filter-btn" data-filter="all">All Animals</button>
-            <button class="filter-btn" data-filter="Mammal">Mammals</button>
-            <button class="filter-btn" data-filter="Bird">Birds</button>
-            <button class="filter-btn" data-filter="Fish">Fish</button>
-            <button class="filter-btn" data-filter="Reptile">Reptiles</button>
-            <button class="filter-btn" data-filter="Amphibian">Amphibians</button>
+        <div class="filters-container">
+            <div class="filters-wrapper">
+                <button class="filter-btn active" data-filter="all">All Animals</button>
+                <button class="filter-btn" data-filter="Mammal">Mammals</button>
+                <button class="filter-btn" data-filter="Bird">Birds</button>
+                <button class="filter-btn" data-filter="Fish">Fish</button>
+                <button class="filter-btn" data-filter="Reptile">Reptiles</button>
+                <button class="filter-btn" data-filter="Amphibian">Amphibians</button>
+            </div>
         </div>
 
-        <div id="animal-cards" class="gallery"></div>
+        <div id="animal-cards" class="gallery">
+            <!-- Animal cards will be inserted here by JavaScript -->
+        </div>
 
         <!-- View Modal -->
         <div id="animal-modal" class="modal hidden">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
-                <img id="modal-image" src="" alt="Animal Image" />
-                <h2 id="modal-name"></h2>
-                <p><strong>Type:</strong> <span id="modal-type"></span></p>
-                <p><strong>Description:</strong> <span id="modal-description"></span></p>
-                <div class="modal-actions">
-                    <button id="update-btn">Update</button>
-                    <button id="delete-btn">Delete</button>
+                <div class="modal-image-container">
+                    <img id="modal-image" src="" alt="Animal Image" />
+                    <div class="animal-info-overlay">
+                        <h2 id="modal-name"></h2>
+                        <p><span id="modal-type"></span></p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <div class="modal-description-container">
+                        <p id="modal-description-title"><strong>Description:</strong></p>
+                        <div id="modal-description"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="update-btn">Update</button>
+                        <button id="delete-btn">Delete</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,6 +62,8 @@
                 <h2>Update Animal</h2>
                 <form id="update-form">
                     <input type="hidden" id="update-id" />
+                    <label>Image URL:</label>
+                    <input type="url" id="update-image" required />
                     <label>Name:</label>
                     <input type="text" id="update-name" required />
                     <label>Type:</label>
@@ -60,8 +76,6 @@
                     </select>
                     <label>Description:</label>
                     <textarea id="update-description" rows="3" required></textarea>
-                    <label>Image URL:</label>
-                    <input type="url" id="update-image" required />
                     <div class="modal-actions">
                         <button type="submit">Save Changes</button>
                     </div>
