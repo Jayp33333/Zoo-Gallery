@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Animal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>➕ Add New Animal</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">View Animals</a>
+        </nav>
+    </header>
+    <main>
+        <form id="animal-form">
+            <label for="image">Image URL:</label>
+            <input type="url" id="image" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="type">Type:</label>
+            <select id="type" required>
+                <option value="">Select a type</option>
+                <option value="Mammal">Mammal</option>
+                <option value="Bird">Bird</option>
+                <option value="Fish">Fish</option>
+                <option value="Reptile">Reptile</option>
+                <option value="Amphibian">Amphibian</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+
+            <button type="submit">Add Animal</button>
+        </form>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

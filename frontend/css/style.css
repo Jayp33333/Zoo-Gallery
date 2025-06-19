@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Form Styles */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    overflow: hidden;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.animal-card h3, .animal-card p {
+    padding: 0 10px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #3e8e41;
+}
+
+.filter-btn[data-filter="all"] {
+    background-color: #2196F3;
+}
+
+.filter-btn[data-filter="Mammal"] {
+    background-color: #ff9800;
+}
+
+.filter-btn[data-filter="Bird"] {
+    background-color: #9c27b0;
+}
+
+.filter-btn[data-filter="Fish"] {
+    background-color: #00bcd4;
+}
+
+.filter-btn[data-filter="Reptile"] {
+    background-color: #8bc34a;
+}
+
+.filter-btn[data-filter="Amphibian"] {
+    background-color: #607d8b;
+}
+
+/* Card cursor pointer */
+.animal-card {
+    cursor: pointer;
+}
+
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.modal-actions {
+    margin-top: 15px;
+}
+.modal-actions button {
+    margin: 5px;
+    padding: 8px 12px;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}

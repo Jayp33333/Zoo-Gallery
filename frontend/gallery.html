@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🦓 Animal Gallery</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-animal.html">Add Animal</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="filters">
+            <button class="filter-btn" data-filter="all">All Animals</button>
+            <button class="filter-btn" data-filter="Mammal">Mammals</button>
+            <button class="filter-btn" data-filter="Bird">Birds</button>
+            <button class="filter-btn" data-filter="Fish">Fish</button>
+            <button class="filter-btn" data-filter="Reptile">Reptiles</button>
+            <button class="filter-btn" data-filter="Amphibian">Amphibians</button>
+        </div>
+
+        <div id="animal-cards" class="gallery"></div>
+
+        <!-- View Modal -->
+        <div id="animal-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img id="modal-image" src="" alt="Animal Image" />
+                <h2 id="modal-name"></h2>
+                <p><strong>Type:</strong> <span id="modal-type"></span></p>
+                <p><strong>Description:</strong> <span id="modal-description"></span></p>
+                <div class="modal-actions">
+                    <button id="update-btn">Update</button>
+                    <button id="delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Modal -->
+        <div id="update-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn update-close">&times;</span>
+                <h2>Update Animal</h2>
+                <form id="update-form">
+                    <input type="hidden" id="update-id" />
+                    <label>Name:</label>
+                    <input type="text" id="update-name" required />
+                    <label>Type:</label>
+                    <select id="update-type" required>
+                        <option value="Mammal">Mammal</option>
+                        <option value="Bird">Bird</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Reptile">Reptile</option>
+                        <option value="Amphibian">Amphibian</option>
+                    </select>
+                    <label>Description:</label>
+                    <textarea id="update-description" rows="3" required></textarea>
+                    <label>Image URL:</label>
+                    <input type="url" id="update-image" required />
+                    <div class="modal-actions">
+                        <button type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
