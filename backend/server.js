@@ -5,8 +5,8 @@ const animalRoutes = require('./routes/animals');
 
 const app = express();
 
-// const MONGO_URI = 'mongodb://localhost:27017/zooDB';
-const MONGO_URI = 'mongodb+srv://zoo-gallery:zoo-gallery@zoo-gallery.v0apg0p.mongodb.net/';
+const MONGO_URI = 'mongodb://localhost:27017/zooDB';
+// const MONGO_URI = 'mongodb+srv://zoo-gallery:zoo-gallery@zoo-gallery.v0apg0p.mongodb.net/';
 
 // Middleware
 app.use(cors());

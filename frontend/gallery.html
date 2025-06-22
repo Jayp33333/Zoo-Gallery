@@ -1,89 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Animal Gallery</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/gallery.css">
-</head>
-<body>
-    <header>
-        <h1>🦓 Animal Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="add-animal.html">Add Animal</a>
-        </nav>
-    </header>
-
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zootopia - Gallery</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Baloo+2:wght@700&family=Fredoka+One&family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="nav-logo">
+          <a href="index.html">Zootopia</a>
+        </div>
+        <div class="nav-link">
+          <a href="gallery.html">Gallery</a>
+          <a href="add-animal.html">Add Animal</a>
+        </div>
+      </div>
+    </nav>
     <main>
-        <div class="filters-container">
-            <div class="filters-wrapper">
-                <button class="filter-btn active" data-filter="all">All Animals</button>
-                <button class="filter-btn" data-filter="Mammal">Mammals</button>
-                <button class="filter-btn" data-filter="Bird">Birds</button>
-                <button class="filter-btn" data-filter="Fish">Fish</button>
-                <button class="filter-btn" data-filter="Reptile">Reptiles</button>
-                <button class="filter-btn" data-filter="Amphibian">Amphibians</button>
-            </div>
+      <div class="filters-container">
+        <div class="filters-wrapper">
+          <button class="filter-btn active" data-filter="all">
+            All Animals
+          </button>
+          <button class="filter-btn" data-filter="Mammal">Mammals</button>
+          <button class="filter-btn" data-filter="Bird">Birds</button>
+          <button class="filter-btn" data-filter="Fish">Fish</button>
+          <button class="filter-btn" data-filter="Reptile">Reptiles</button>
+          <button class="filter-btn" data-filter="Amphibian">Amphibians</button>
         </div>
+      </div>
 
-        <div id="animal-cards" class="gallery">
-            <!-- Animal cards will be inserted here by JavaScript -->
-        </div>
+      <div id="animal-cards" class="gallery">
+        <!-- Animal cards will be inserted here by JavaScript -->
+      </div>
 
-        <!-- View Modal -->
-        <div id="animal-modal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <div class="modal-image-container">
-                    <img id="modal-image" src="" alt="Animal Image" />
-                    <div class="animal-info-overlay">
-                        <h2 id="modal-name"></h2>
-                        <p><span id="modal-type"></span></p>
-                    </div>
-                </div>
-                <div class="modal-info">
-                    <div class="modal-description-container">
-                        <p id="modal-description-title"><strong>Description:</strong></p>
-                        <div id="modal-description"></div>
-                    </div>
-                    <div class="modal-actions">
-                        <button id="update-btn">Update</button>
-                        <button id="delete-btn">Delete</button>
-                    </div>
-                </div>
+      <!-- View Modal -->
+      <div id="animal-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <div class="modal-image-container">
+            <img id="modal-image" src="" alt="Animal Image" />
+            <div class="animal-info-overlay">
+              <h2 id="modal-name"></h2>
+              <p><span id="modal-type"></span></p>
             </div>
-        </div>
+          </div>
+          <div class="modal-info">
+            <p id="modal-description-title"><strong>Description:</strong></p>
 
-        <!-- Update Modal -->
-        <div id="update-modal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close-btn update-close">&times;</span>
-                <h2>Update Animal</h2>
-                <form id="update-form">
-                    <input type="hidden" id="update-id" />
-                    <label>Image URL:</label>
-                    <input type="url" id="update-image" required />
-                    <label>Name:</label>
-                    <input type="text" id="update-name" required />
-                    <label>Type:</label>
-                    <select id="update-type" required>
-                        <option value="Mammal">Mammal</option>
-                        <option value="Bird">Bird</option>
-                        <option value="Fish">Fish</option>
-                        <option value="Reptile">Reptile</option>
-                        <option value="Amphibian">Amphibian</option>
-                    </select>
-                    <label>Description:</label>
-                    <textarea id="update-description" rows="3" required></textarea>
-                    <div class="modal-actions">
-                        <button type="submit">Save Changes</button>
-                    </div>
-                </form>
+            <div class="modal-description-container">
+              <div id="modal-description"></div>
             </div>
+            <div class="modal-actions">
+              <button id="update-btn">Update</button>
+              <button id="delete-btn">Delete</button>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Update Modal -->
+      <div id="update-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn update-close">&times;</span>
+          <form id="update-form">
+            <h2>Update Animal</h2>
+            <input type="hidden" id="update-id" />
+            <label>Image URL: (paste the image address)</label>
+            <input type="url" id="update-image" required />
+            <label>Name:</label>
+            <input type="text" id="update-name" required />
+            <label>Type:</label>
+            <select id="update-type" required>
+              <option value="Mammal">Mammal</option>
+              <option value="Bird">Bird</option>
+              <option value="Fish">Fish</option>
+              <option value="Reptile">Reptile</option>
+              <option value="Amphibian">Amphibian</option>
+            </select>
+            <label>Description:</label>
+            <textarea id="update-description" rows="3" required></textarea>
+            <div class="modal-actions">
+              <button type="submit">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

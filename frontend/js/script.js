@@ -66,6 +66,7 @@ if (document.getElementById('animal-form')) {
             if (document.getElementById('animal-cards')) {
                 await loadAnimals();
             }
+            window.location.href = 'gallery.html'; // Redirect to gallery page
         } catch (error) {
             console.error('Error:', error);
             alert(`Error: ${error.message}`);

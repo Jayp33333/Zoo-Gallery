@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add New Animal</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/add-animal.css">
-</head>
-<body>
-   <header>
-        <h1>➕ Add New Animal</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="gallery.html">View Animals</a>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zootopia - Add Animal</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/add-animal.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Baloo+2:wght@700&family=Fredoka+One&family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="nav-logo">
+          <a href="index.html">Zootopia</a>
+        </div>
+        <div class="nav-link">
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+    </nav>
     <main>
-        <form id="animal-form">
-            <label for="image">Image URL:</label>
-            <input type="url" id="image" required placeholder="https://example.com/animal.jpg">
+      
+      <form id="animal-form">
+        <h2>Add Animal</h2>
+        <label for="image">Image URL: (paste the image address)</label>
+        <input
+          type="url"
+          id="image"
+          required
+          placeholder="https://example.com/animal.jpg"
+        />
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" required placeholder="Enter animal name">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required placeholder="Enter animal name" />
+        <label for="type">Type:</label>
+        <select id="type" required>
+          <option value="">Select a type</option>
+          <option value="Mammal">Mammal</option>
+          <option value="Bird">Bird</option>
+          <option value="Fish">Fish</option>
+          <option value="Reptile">Reptile</option>
+          <option value="Amphibian">Amphibian</option>
+        </select>
 
-            <label for="type">Type:</label>
-            <select id="type" required>
-                <option value="">Select a type</option>
-                <option value="Mammal">Mammal</option>
-                <option value="Bird">Bird</option>
-                <option value="Fish">Fish</option>
-                <option value="Reptile">Reptile</option>
-                <option value="Amphibian">Amphibian</option>
-            </select>
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          required
+          placeholder="Describe the animal..."
+        ></textarea>
 
-            <label for="description">Description:</label>
-            <textarea id="description" required placeholder="Describe the animal..."></textarea>
-
-            <button type="submit">Add Animal</button>
-        </form>
+        <button type="submit">Add</button>
+      </form>
     </main>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
