@@ -5,8 +5,18 @@
     <title>Zootopia - Gallery</title>
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/gallery.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Baloo+2:wght@700&family=Fredoka+One&family=Bungee&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Baloo+2:wght@700&family=Fredoka+One&family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <nav>
@@ -21,6 +31,22 @@
       </div>
     </nav>
     <main>
+      <div class="search-container">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="animal-search"
+            placeholder="Search by animal name..."
+            class="collapsed"
+          />
+          <button id="clear-search" class="clear-btn hidden">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button id="search-btn" class="search-icon">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
       <div class="filters-container">
         <div class="filters-wrapper">
           <button class="filter-btn active" data-filter="all">
@@ -92,6 +118,6 @@
       </div>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>
