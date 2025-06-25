@@ -241,6 +241,7 @@ function initGallery() {
     const type = document.getElementById("update-type").value;
     const description = document.getElementById("update-description").value;
 
+    // Validate form values
     if (!image || !name || !type || !description) {
       alert("Please fill in all fields");
       return;

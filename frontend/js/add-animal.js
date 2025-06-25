@@ -4,15 +4,18 @@ const API_URL = "http://localhost:3001/api/animals";
 function initAddAnimalForm() {
   const animalForm = document.getElementById("animal-form");
   
+  // Check if the form exists
   if (animalForm) {
     animalForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
+      // Get form values
       const imageUrl = document.getElementById("image").value;
       const name = document.getElementById("name").value;
       const type = document.getElementById("type").value;
       const description = document.getElementById("description").value;
 
+      // Validate form values
       if (!imageUrl || !name || !type || !description) {
         alert("Please fill in all fields");
         return;
@@ -25,6 +28,7 @@ function initAddAnimalForm() {
         return;
       }
 
+      // Prepare the animal data object
       const animalData = {
         image: imageUrl,
         name,
